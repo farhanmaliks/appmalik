@@ -35,6 +35,12 @@ def contact_view(request):
     # context["products"] = Products.objects.all()
     return render(request, "contact.html")
 
+def cart_view(request):
+    if request.method == "POST":
+        pass
+    return render(request, "cart.html") 
+
+
 def create_review(request):
     if request.method == 'POST':
         form = ReviewForm(request.POST or None)
@@ -53,5 +59,31 @@ def create_review(request):
 def custom_404(request, exception):
     return render(request, '404.html',)
 
+# signup page
 def register_view(request):
-    return render(request, "register.html")
+    if request.method == 'POST':
+        form = SignupForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('login')
+    else:
+        form = SignupForm()
+    return render(request, 'register.html', {'form': form})
+
+def user_login(request):
+    if request.method == 'POST':
+        form = LoginForm(request.POST)
+        if form.is_valid():
+            username = form.cleaned_data['username']
+            password = form.cleaned_data['password']
+            user = authenticate(request, username=username, password=password)
+            if user:
+                login(request, user)    
+                return redirect('home')
+    else:
+        form = LoginForm()
+    return render(request, 'login.html', {'form': form})
+
+def user_logout(request):
+    logout(request)
+    return redirect('login')

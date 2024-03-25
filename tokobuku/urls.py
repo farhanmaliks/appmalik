@@ -7,5 +7,7 @@ urlpatterns = [
     path('contact/', contact_view, name='contact'),
     path('review/', create_review, name='review'),
     path('register/', register_view, name='register'),
-    # path('cart/', cart_view, name='cart'),
+    path('login/', user_login, name='login'),
+    path('logout/', user_logout, name='logout'),
+    path('cart/', cart_view, name='cart'),
 ]
