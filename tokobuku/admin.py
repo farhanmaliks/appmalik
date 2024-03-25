@@ -54,7 +54,7 @@ class ContactsAdmin(ImportExportModelAdmin, admin.ModelAdmin):
     search_fields = ('ContactName',)
 
 class ReviewAdmin(ImportExportModelAdmin, admin.ModelAdmin):
-    list_display = ("product_id", "cust_name", "cust_email", "cust_review",)
+    list_display = ("product_id", "cust_name", "cust_email", "cust_review", "rate")
     search_fields = ("cust_name__startswith",)
     list_filter = ("cust_name",)
 

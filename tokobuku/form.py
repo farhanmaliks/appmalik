@@ -11,7 +11,7 @@ class ContactsForm(forms.ModelForm):
 class ReviewForm(forms.ModelForm):
     class Meta:
         model = Review
-        fields = ['product_id', 'cust_name', 'cust_email', 'cust_review']
+        fields = ['product_id', 'cust_name', 'cust_email', 'cust_review', 'rate']
 
 class SignupForm(UserCreationForm):
     class Meta:

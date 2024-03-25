@@ -163,3 +163,4 @@ class Review(models.Model):
     cust_email = models.EmailField(max_length=200)
     cust_review = models.TextField(max_length=500)
     datetime = models.DateTimeField(auto_now_add=True)
+    rate = models.IntegerField(default=1)

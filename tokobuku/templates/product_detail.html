@@ -133,31 +133,57 @@
                                             <div class="d-flex justify-content-between">
                                                 <h5>{{review.cust_name}}</h5>
                                                 <div class="d-flex mx-2 mb-3">
+                                                    {% if review.rate == 1 %}
+                                                    <i class="fa fa-star text-secondary"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    {% elif review.rate == 2 %}
+                                                    <i class="fa fa-star text-secondary"></i>
+                                                    <i class="fa fa-star text-secondary"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    {% elif review.rate == 3 %}
+                                                    <i class="fa fa-star text-secondary"></i>
+                                                    <i class="fa fa-star text-secondary"></i>
+                                                    <i class="fa fa-star text-secondary"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    {% elif review.rate == 4 %}
                                                     <i class="fa fa-star text-secondary"></i>
                                                     <i class="fa fa-star text-secondary"></i>
                                                     <i class="fa fa-star text-secondary"></i>
                                                     <i class="fa fa-star text-secondary"></i>
                                                     <i class="fa fa-star"></i>
-                                                </div>
+                                                    {% elif review.rate == 5 %}
+                                                    <i class="fa fa-star text-secondary"></i>
+                                                    <i class="fa fa-star text-secondary"></i>
+                                                    <i class="fa fa-star text-secondary"></i>
+                                                    <i class="fa fa-star text-secondary"></i>
+                                                    <i class="fa fa-star text-secondary"></i>
+                                                    {% endif %}
                                             </div>
-                                            <p>{{review.cust_review}} </p>
                                         </div>
+                                        <p>{{review.cust_review}} </p>
                                     </div>
-                                    {% endfor %}
                                 </div>
-                                <div class="tab-pane" id="nav-vision" role="tabpanel">
+                                {% endfor %}
+
+                                <!-- <div class="tab-pane" id="nav-vision" role="tabpanel">
                                     <p class="text-dark">Tempor erat elitr rebum at clita. Diam dolor diam ipsum et
                                         tempor sit. Aliqu diam
                                         amet diam et eos labore. 3</p>
                                     <p class="mb-0">Diam dolor diam ipsum et tempor sit. Aliqu diam amet diam et eos
                                         labore.
                                         Clita erat ipsum et lorem et sit</p>
-                                </div>
+                                </div> -->
                             </div>
-                            {% include 'review.html' %}
                         </div>
-
+                        
                     </div>
+                    {% include 'review.html' %}
                 </div>
 
                 <div class="col-lg-4 col-xl-3">
